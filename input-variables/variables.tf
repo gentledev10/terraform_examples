@@ -1,3 +1,13 @@
+variable "iam_user_count" {
+  type        = number
+  description = "IAM user count"
+
+  validation {
+    condition     = var.iam_user_count < 5
+    error_message = "IAM user count must be less than 5."
+  }
+}
+
 variable "iam_user_name" {
   type        = string
   default     = "iam-user-name"
